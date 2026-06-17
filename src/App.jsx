@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import debounce from "./utils/debounce";
 import throttle from "./utils/Throttle";
+import Deferred from "./Deferred";
 
 export default function App() {
   const [valueD, setValueD] = useState("");
@@ -19,7 +20,6 @@ export default function App() {
     setValueth(e.target.value);
     throttledLog(e.target.value);
   }
-
 
   //dbounce ----------------
   const debouncedLog = debounce((inputValue) => {
@@ -46,6 +46,8 @@ export default function App() {
         onChange={handleChangeth}
         placeholder="throttle..."
       />
+
+      <Deferred />
     </div>
   );
 }
